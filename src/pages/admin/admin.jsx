@@ -12,12 +12,12 @@ export default class Admin extends Component {
       {
         itemName: '北京路步行街发展指数大屏', 
         pictureUrl: 'http://big-screen.oss-cn-shenzhen.aliyuncs.com/beijingRoad/develop.png',
-        targetLink: '/beijingroad/develop'
+        targetLink: '/hhl/develop'
       },
       {
         itemName: '北京路步行街客流指数大屏', 
         pictureUrl: 'http://big-screen.oss-cn-shenzhen.aliyuncs.com/beijingRoad/passenger.png',
-        targetLink: '/beijingroad/passenger'
+        targetLink: '/hhl/passenger'
       },
       {itemName: '暂未开放', pictureUrl: '', targetLink: ''},
       {itemName: '暂未开放', pictureUrl: '', targetLink: ''},
@@ -34,7 +34,7 @@ export default class Admin extends Component {
     console.log('点击了按钮', index)
     if (screenData[index].targetLink && screenData[index].targetLink.length > 0) {
       /* 页面跳转, push(), goback(), replace(), go()*/
-      this.props.history.push('/login')
+      this.props.history.push(screenData[index].targetLink)
     } else {
       message.warn('当前屏幕暂未开放...')
     }
