@@ -12,7 +12,7 @@ import axios from 'axios'
 import {message} from 'antd'
 
 // 当前运行的后台的初始化地址
-const BASE = 'process.env.REACT_APP_BASE_URL'
+const BASE = process.env.REACT_APP_BASE_URL
 
 export default function ajax(url, data = {}, method = 'GET') {
   return new Promise(function (resolve, reject) {

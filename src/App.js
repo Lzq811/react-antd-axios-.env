@@ -4,11 +4,18 @@ import React, { Component } from 'react'
 
 import {BrowserRouter, Switch, Route} from 'react-router-dom'
 
+import flex from './utils/flex'
+
 import Login from './pages/login/login'
 import Admin from './pages/admin/admin'
 
 
 class App extends Component {
+
+  componentDidMount () {
+    flex()
+  }
+
   render () {
     return (
       <BrowserRouter>

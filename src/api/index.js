@@ -11,4 +11,4 @@
 
 import ajax from './ajax'
 
-export const ReqLogin = (username, password) => ajax('/login', {username, password}, 'POST')
+export const ReqLogin = (params) => ajax('/users/login2', params, 'POST')
