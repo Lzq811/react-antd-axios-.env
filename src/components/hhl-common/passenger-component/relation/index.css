@@ -16,6 +16,7 @@
 .relation-wrap .tabs-container {
   width: 100%;
   height: 60px;
+  margin: 6% 0 4%;
 }
 .relation-wrap .tabs-container .tab-item {
   display: inline-block;
