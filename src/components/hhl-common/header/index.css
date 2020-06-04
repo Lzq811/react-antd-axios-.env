@@ -1,34 +1,36 @@
 .header-wrap {
-  position: fixed;
-  top: 10.5%;
-  left: 7%;
-  width: 86%;
-  height: 60px;
-  border: 1px solid red;
+  width: 100%;
+  height: 66px;
+  margin: 0 auto;
   display: flex;
 }
 .header-wrap .left-logo {
-  flex: 0 0 30%;
+  flex: 0 0 10%;
   text-align: left;
 }
 .header-wrap .left-logo .logo {
-  padding: 14px 0 0 20px;
+  padding: 8px 0 0 28px;
 }
 .header-wrap .center-title {
-  flex: 0 0 40%;
+  flex: 0 0 80%;
+  background-image: url('http://big-screen.oss-cn-shenzhen.aliyuncs.com/HuaiHeRoad/header.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+.header-wrap .center-title .title {
   text-align: center;
-  font-size: 46px;
+  font-size: 60px;
   font-weight: 700;
   letter-spacing: 8px;
-  line-height: 46px;
-  padding-left: 6px;
+  padding-left: 12px;
+  margin-top: -30px;
 }
 .header-wrap .right-time {
-  flex: 0 0 30%;
+  flex: 0 0 10%;
   text-align: right;
-  font-size: 16px;
+  font-size: 24px;
   font-weight: normal;
-  line-height: 22px;
+  line-height: 36px;
   box-sizing: border-box;
-  padding-right: 130px;
+  padding-right: 60px;
 }

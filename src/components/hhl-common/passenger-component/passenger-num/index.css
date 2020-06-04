@@ -1,0 +1,34 @@
+.passenger-num-wrap {
+  height: 100%;
+  /* 126px */
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.passenger-num-wrap .num-item {
+  flex: 0 0 48%;
+  background-image: url('http://big-screen.oss-cn-shenzhen.aliyuncs.com/HuaiHeRoad/number-border.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+.passenger-num-wrap .num-item .value {
+  margin-top: 16px;
+  text-align: center;
+  line-height: 50px;
+  font-size: 40px;
+  font-weight: 700;
+  color: #29D9FF;
+  letter-spacing: 4px;
+}
+.passenger-num-wrap .num-item .value .unit {
+  color: #29D9FF;
+  font-size: 22px;
+}
+.passenger-num-wrap .num-item .title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 8px;
+}

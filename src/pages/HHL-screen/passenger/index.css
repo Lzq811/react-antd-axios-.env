@@ -1,0 +1,79 @@
+.passenger-wrap {
+  width: 5764px;
+  height: 1621px;
+  overflow: hidden;
+}
+.passenger-wrap .map-container {
+  width: 5764px;
+  height: 1621px;
+}
+.passenger-wrap .map-container .map {
+  width: 5764px;
+  height: 1631px;
+}
+.passenger-wrap .mask-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5764px;
+  height: 1621px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.passenger-wrap .header-container {
+  width: 5764px;
+  position: absolute;
+  top: 40px;
+  left: 0px;
+}
+.passenger-wrap .left-container,
+.passenger-wrap .bottom-container,
+.passenger-wrap .right-container {
+  position: absolute;
+  border-radius: 10px;
+}
+.passenger-wrap .left-container {
+  background-color: rgba(0, 0, 0, 0.2);
+  width: 500px;
+  height: 988px;
+  top: 141px;
+  left: 68px;
+}
+.passenger-wrap .bottom-container {
+  height: 408px;
+  width: 5100px;
+  top: 1150px;
+  left: 68px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.passenger-wrap .bottom-container > div {
+  border-radius: 10px;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.passenger-wrap .bottom-container .left-content {
+  flex: 0 0 71%;
+}
+.passenger-wrap .bottom-container .center-content {
+  flex: 0 0 18%;
+}
+.passenger-wrap .bottom-container .right-content {
+  flex: 0 0 10%;
+}
+.passenger-wrap .right-container {
+  background-color: rgba(0, 0, 0, 0.2);
+  width: 500px;
+  height: 1394px;
+  top: 164px;
+  left: 5196px;
+}
+.passenger-wrap .top-center-passenger-container {
+  width: 1168px;
+  /* 每个边框是 554 中间间隔 60px */
+  height: 126px;
+  position: absolute;
+  top: 136px;
+  left: 2300px;
+  /*( 5764 - 1168 )  / 2 */
+}
