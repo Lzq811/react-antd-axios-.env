@@ -48,8 +48,9 @@ export default class Passenger extends Component {
     }
     buildingLayer.setStyle(options); //此配色优先级高于自定义mapStyle
     const map = new window.AMap.Map(container, {
-      zoom: 17.4,
-      zooms: [17, 18],
+      zoom: 17.8,
+      zoomEnable: false,
+      // zooms: [17, 18],
       dragEnable: false,
       pitch: 60,
       skyColor: '#45B7FE',
