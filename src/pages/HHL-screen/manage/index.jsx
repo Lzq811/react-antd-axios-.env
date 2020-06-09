@@ -151,16 +151,16 @@ export default class Manage extends Component {
     }
     buildingLayer.setStyle(options); //此配色优先级高于自定义mapStyle
     const map = new window.AMap.Map(container, {
-      zoom: 17.8,
+      zoom: 18,
       zoomEnable: false,
       // zooms: [17, 18],
-      dragEnable: false,
+      dragEnable: true,
       pitch: 60,
       skyColor: '#45B7FE',
       showIndoorMap: false,
       showLabel: false,
       mapStyle: 'amap://styles/ffaca3b000b8fd533368b6ad6a7cc603',
-      center: [117.292198, 31.8636],
+      center: [117.292198, 31.8645],
       features: ['bg','point','road'],
       viewMode:'3D',
       buildingAnimation: true,
@@ -169,6 +169,7 @@ export default class Manage extends Component {
         buildingLayer
       ]
     })
+    map.setRotation(24)
     new window.AMap.Polygon({
       bubble:true,
       fillColor:'#0079e7',
@@ -197,14 +198,28 @@ export default class Manage extends Component {
       offset: new window.AMap.Pixel(0, 0)
     })
     map.add(marker)
+    const markerEle2 = this.refs.marker2
+    const marker2 = new window.AMap.Marker({
+      content: markerEle2,
+      position: [117.291309,31.865425],
+      offset: new window.AMap.Pixel(0, 0)
+    })
+    map.add(marker2)
     let timer = setInterval(() => {
-      markerEle.style.top = parseInt(markerEle.style.top) - 3 + 'px'
+      markerEle.style.top = parseInt(markerEle.style.top) - 5 + 'px'
       markerEle.style.opacity -= 0.01
       if (markerEle.style.opacity < 0) {
-        clearInterval(timer)
         map.remove(marker)
         markerEle.style.top = '-10px'
         markerEle.style.opacity = 1
+      }
+      markerEle2.style.top = parseInt(markerEle2.style.top) - 5 + 'px'
+      markerEle2.style.opacity -= 0.01
+      if (markerEle2.style.opacity < 0) {
+        clearInterval(timer)
+        map.remove(marker2)
+        markerEle2.style.top = '-10px'
+        markerEle2.style.opacity = 1
       }
     }, 20)
   }
@@ -213,7 +228,7 @@ export default class Manage extends Component {
     this.initMap()
     setInterval(() => {
       this.flyBall()
-    }, 10000)
+    }, 8000)
   }
 
   render () {
@@ -224,6 +239,9 @@ export default class Manage extends Component {
           <div ref='mapcontainer' className='map'></div>
           <div className='custom-marker' ref='marker' style={{top: '-10px', right: '-10px', opacity: 1}}>
             <div className='fly-ball'>123</div>
+          </div>
+          <div className='custom-marker' ref='marker2' style={{top: '-10px', right: '-10px', opacity: 1}}>
+            <div className='fly-ball'>346</div>
           </div>
         </div>
         <div className='top-container'>

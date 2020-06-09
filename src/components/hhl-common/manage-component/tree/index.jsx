@@ -1,5 +1,4 @@
 /* 经营数据大屏的树结构 */
-
 import React, {Component} from 'react'
 
 import * as echarts from 'echarts'
@@ -48,8 +47,9 @@ export default class Tree extends Component {
             }
           ],
           label: {
-            formatter: function (data) {
-              return  '{a|'+String(data.data.value * 100).substring(0, 2)+'}'+'{b|'+String(data.data.value * 100).substring(2, 5)+'%}\n' + data.data.name
+            formatter: (data) => {
+              // eslint-disable-next-line
+              return '{a|' + String(data.data.value * 100).substring(0, 2) + '}' + '{b|' + String(data.data.value * 100).substring(2, 5)+'%}\n' + data.data.name
             },
             padding: [60, 0, 0, 0],
             rich:{
