@@ -1,0 +1,60 @@
+.manage-screen {
+  width: 5764px;
+  height: 1621px;
+  background-color: #072B6F;
+  position: relative;
+}
+.manage-screen .map-container {
+  width: 5764px;
+  height: 1621px;
+}
+.manage-screen .map-container .map {
+  width: 5764px;
+  height: 1631px;
+}
+.manage-screen .top-container {
+  position: absolute;
+  top: 180px;
+  left: 1982px;
+  width: 1760px;
+  height: 170px;
+}
+.manage-screen .header-container {
+  width: 5764px;
+  position: absolute;
+  top: 80px;
+  left: 0px;
+}
+.manage-screen .left-graph-container {
+  width: 1518px;
+  height: 1354px;
+  position: absolute;
+  top: 200px;
+  left: 70px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+.manage-screen .right-chart-container {
+  width: 1258px;
+  height: 1354px;
+  position: absolute;
+  top: 200px;
+  left: 4446px;
+}
+.manage-screen .custom-marker {
+  position: relative;
+  width: 0px;
+  height: 0px;
+}
+.manage-screen .custom-marker .fly-ball {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  font-size: 36px;
+  background-image: url('http://big-screen.oss-cn-shenzhen.aliyuncs.com/HuaiHeRoad/ball.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  color: #fff;
+  text-align: center;
+  line-height: 200px;
+}
