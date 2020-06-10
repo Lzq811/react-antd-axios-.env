@@ -10,6 +10,7 @@ import flex from './utils/flex'
 // import Admin from './pages/admin/admin'
 import HhlManage from './pages/HHL-screen/manage'
 import HhlPassenger from './pages/HHL-screen/passenger'
+import HhlMember from './pages/HHL-screen/member'
 
 
 class App extends Component {
@@ -22,12 +23,10 @@ class App extends Component {
     return (
       <BrowserRouter>
         <Switch>
-          {/* <Route path='/login' component={Login}/> */}
-          {/* <Route path='/admin' component={Admin}/> */}
           <Route path='/manage' component={HhlManage}/>
           <Route path='/passenger' component={HhlPassenger}/>
-          <Route path='/' component={HhlManage}/>
-          {/* <Route path='/' component={Login}/> */}
+          <Route path='/member' component={HhlMember}/>
+          <Route path='/' component={HhlMember}/>
         </Switch>
       </BrowserRouter>
     )

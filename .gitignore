@@ -10,6 +10,7 @@
 
 # production
 /build
+/prod-bigscreen
 
 # misc
 .DS_Store

@@ -1,17 +1,17 @@
+/* 会员 && 商户大屏 */
+
 import React, {Component} from 'react'
 
 import Header from '../../../components/hhl-common/header'
-import Tree from '../../../components/hhl-common/manage-component/tree'
-import RightWrap from '../../../components/hhl-common/manage-component/right-items'
-import TopCenter from '../../../components/hhl-common/manage-component/top-center'
+import Left from '../../../components/hhl-common/member-component/left-items'
+import Right from '../../../components/hhl-common/member-component/right-items'
+import Bottom from '../../../components/hhl-common/member-component/bottom-items'
 
 import './index.less'
 
-export default class Manage extends Component {
+export default class Member extends Component {
 
-  state = {
-    map: null,
-  }
+  state = {map: null}
 
   initMap = () => {
     const container = this.refs.mapcontainer
@@ -169,7 +169,7 @@ export default class Manage extends Component {
         buildingLayer
       ]
     })
-    map.setRotation(24)
+    // map.setRotation(24)
     new window.AMap.Polygon({
       bubble:true,
       fillColor:'#0079e7',
@@ -186,75 +186,64 @@ export default class Manage extends Component {
     map.add(marker)
     marker.setAnimation('AMAP_ANIMATION_BOUNCE')
     this.setState({map: map})
+    setTimeout(() => {
+      this.makerList()
+    }, 4000);
   }
 
-  flyBall = () => {
-    console.log('flyball')
+  makerList = () => {
     const {map} = this.state
-    const markerEle = this.refs.marker
-    const marker = new window.AMap.Marker({
-      content: markerEle,
-      position: [117.293319,31.864425],
-      offset: new window.AMap.Pixel(0, 0)
+    const style = {
+      'background-image': 'linear-gradient(to right, rgba(0,216,236,0.4), #00D7EB)',
+      'color': 'white',
+      'font-size': '20px',
+      'border': 'none',
+      'padding': '8px 16px'
+    }
+    const posList = [
+      {text: '外婆家', pos:  [117.287706,31.864806]},
+      {text: '周六福', pos:  [117.287024,31.861667]},
+      {text: '李宁国潮旗舰店', pos:  [117.289111,31.861658]},
+      {text: '肯德基', pos:  [117.291155,31.861977]},
+      {text: '家乐福', pos:  [117.297018,31.862774]},
+      {text: '周生生珠宝', pos:  [117.298376,31.863649]},
+    ]
+    let textMarkers = []
+    posList.forEach(item => {
+      textMarkers.push(
+        new window.AMap.Text({
+          text: item.text,
+          position: item.pos,
+          offset: new window.AMap.Pixel(0, 0),
+          style: style
+        })
+      )
     })
-    map.add(marker)
-    const markerEle2 = this.refs.marker2
-    const marker2 = new window.AMap.Marker({
-      content: markerEle2,
-      position: [117.291309,31.865425],
-      offset: new window.AMap.Pixel(0, 0)
-    })
-    map.add(marker2)
-    let timer = setInterval(() => {
-      markerEle.style.top = parseInt(markerEle.style.top) - 5 + 'px'
-      markerEle.style.opacity -= 0.01
-      if (markerEle.style.opacity < 0) {
-        map.remove(marker)
-        markerEle.style.top = '-10px'
-        markerEle.style.opacity = 1
-      }
-      markerEle2.style.top = parseInt(markerEle2.style.top) - 5 + 'px'
-      markerEle2.style.opacity -= 0.01
-      if (markerEle2.style.opacity < 0) {
-        clearInterval(timer)
-        map.remove(marker2)
-        markerEle2.style.top = '-10px'
-        markerEle2.style.opacity = 1
-      }
-    }, 20)
+    map.add(textMarkers)
   }
 
   componentDidMount () {
     this.initMap()
-    setInterval(() => {
-      this.flyBall()
-    }, 8000)
   }
 
   render () {
 
     return (
-      <div className="manage-screen">
+      <div className='member-wrap'>
+        <div className='header-container'>
+          <Header title='淮河路会员&商户大屏'></Header>
+        </div>
         <div className='map-container'>
           <div ref='mapcontainer' className='map'></div>
-          <div className='custom-marker' ref='marker' style={{top: '-10px', right: '-10px', opacity: 1}}>
-            <div className='fly-ball'>123</div>
-          </div>
-          <div className='custom-marker' ref='marker2' style={{top: '-10px', right: '-10px', opacity: 1}}>
-            <div className='fly-ball'>346</div>
-          </div>
         </div>
-        <div className='top-container'>
-          <TopCenter></TopCenter>
+        <div className='left-container'>
+          <Left></Left>
         </div>
-        <div className='header-container'>
-          <Header title='淮河路步行街经营分析大屏'></Header>
+        <div className='bottm-container'>
+          <Bottom></Bottom>
         </div>
-        <div className='left-graph-container'>
-          <Tree></Tree>
-        </div>
-        <div className='right-chart-container'>
-          <RightWrap></RightWrap>
+        <div className='right-container'>
+          <Right></Right>
         </div>
       </div>
     )

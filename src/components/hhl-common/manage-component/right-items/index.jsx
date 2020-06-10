@@ -491,7 +491,7 @@ export default class RightWrap extends Component {
           </div>
           <div className='table'>
             <div className='table-item'>
-              <div className='table-title'>品牌排名</div>
+              <div className='table-title'>餐饮排名</div>
               <div className='title-item'>
                 <div className='item item-order'>排名</div>
                 <div className='item item-name'>商户名</div>
@@ -508,7 +508,7 @@ export default class RightWrap extends Component {
               }
             </div>
             <div className='table-item'>
-              <div className='table-title'>品牌排名</div>
+              <div className='table-title'>销售排名</div>
               <div className='title-item'>
                 <div className='item item-order'>排名</div>
                 <div className='item item-name'>商户名</div>

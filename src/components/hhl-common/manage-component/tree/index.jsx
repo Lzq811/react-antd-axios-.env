@@ -30,7 +30,7 @@ export default class Tree extends Component {
             show: false
           },
           backgroundStyle: {
-            color: 'rgba(255, 255, 255, 0)'
+            color: 'rgba(255, 255, 255, 0.9)'
           },
           data: [
             {
@@ -403,9 +403,9 @@ export default class Tree extends Component {
       <div className='tree-wrap'>
         <div className='liquild-ball'>
           <ReactEcharts
-          option={this.liquidFillOption()}
-          style={{height: '100%', width: '100%'}}
-        />
+            option={this.liquidFillOption()}
+            style={{height: '100%', width: '100%'}}
+          />
         </div>
         <div id='tree-chart' className='tree-chart'></div>
       </div>
