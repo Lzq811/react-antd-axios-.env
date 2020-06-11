@@ -174,7 +174,7 @@ export default class Right extends Component {
           <div className='detail-box'>
             <div className='sex'>男</div>
             <div className='pic'>
-              <img width='100%' height='100%' src={currentSexUrl}/>
+              <img width='100%' height='100%' src={currentSexUrl} alt=''/>
             </div>
             <div className='custom'>消费能力: 2~4 万</div>
             <div className='active-time'>最近一次活动时间: 2020-06-10 12:00:00</div>
