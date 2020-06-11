@@ -205,6 +205,8 @@ export default class Manage extends Component {
       offset: new window.AMap.Pixel(0, 0)
     })
     map.add(marker2)
+    markerEle.style.opacity = 1
+    markerEle2.style.opacity = 1
     let timer = setInterval(() => {
       markerEle.style.top = parseInt(markerEle.style.top) - 5 + 'px'
       markerEle.style.opacity -= 0.01
@@ -237,10 +239,10 @@ export default class Manage extends Component {
       <div className="manage-screen">
         <div className='map-container'>
           <div ref='mapcontainer' className='map'></div>
-          <div className='custom-marker' ref='marker' style={{top: '-10px', right: '-10px', opacity: 1}}>
+          <div className='custom-marker' ref='marker' style={{top: '-10px', right: '-10px', opacity: 0}}>
             <div className='fly-ball'>123</div>
           </div>
-          <div className='custom-marker' ref='marker2' style={{top: '-10px', right: '-10px', opacity: 1}}>
+          <div className='custom-marker' ref='marker2' style={{top: '-10px', right: '-10px', opacity: 0}}>
             <div className='fly-ball'>346</div>
           </div>
         </div>
