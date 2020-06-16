@@ -246,6 +246,7 @@ export default class Manage extends Component {
             <div className='fly-ball'>346</div>
           </div>
         </div>
+        <div className='mask-layer'></div>
         <div className='top-container'>
           <TopCenter></TopCenter>
         </div>

@@ -6,6 +6,7 @@
 .passenger-wrap .map-container {
   width: 5764px;
   height: 1621px;
+  z-index: -1;
 }
 .passenger-wrap .map-container .map {
   width: 5764px;
@@ -34,7 +35,7 @@
   z-index: 100;
 }
 .passenger-wrap .left-container {
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.5);
   width: 500px;
   height: 988px;
   top: 141px;
@@ -52,7 +53,7 @@
 .passenger-wrap .bottom-container > div {
   border-radius: 10px;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 .passenger-wrap .bottom-container .left-content {
   flex: 0 0 71%;
@@ -64,7 +65,7 @@
   flex: 0 0 10%;
 }
 .passenger-wrap .right-container {
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.5);
   width: 500px;
   height: 1394px;
   top: 164px;

@@ -7,10 +7,19 @@
 .manage-screen .map-container {
   width: 5764px;
   height: 1621px;
+  z-index: -1;
 }
 .manage-screen .map-container .map {
   width: 5764px;
   height: 1631px;
+}
+.manage-screen .mask-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5764px;
+  height: 1621px;
+  background-color: rgba(255, 255, 255, 0.2);
 }
 .manage-screen .top-container {
   position: absolute;

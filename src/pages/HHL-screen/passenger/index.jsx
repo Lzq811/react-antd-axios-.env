@@ -105,6 +105,7 @@ export default class Passenger extends Component {
         <div className='map-container'>
           <div ref='mapcontainer' className='map'></div>
         </div>
+        <div className='mask-layer'></div>
         <div className='header-container'>
           <Header title='淮河路步行街商圈客流分析大屏'></Header>
         </div>

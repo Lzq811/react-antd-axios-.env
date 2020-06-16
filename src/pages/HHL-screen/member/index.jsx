@@ -230,12 +230,13 @@ export default class Member extends Component {
 
     return (
       <div className='member-wrap'>
-        <div className='header-container'>
-          <Header title='淮河路会员&商户大屏'></Header>
-        </div>
         <div className='map-container'>
           <div ref='mapcontainer' className='map'></div>
         </div>
+        <div className='header-container'>
+          <Header title='淮河路会员&商户大屏'></Header>
+        </div>
+        <div className='mask-layer'></div>
         <div className='left-container'>
           <Left></Left>
         </div>
