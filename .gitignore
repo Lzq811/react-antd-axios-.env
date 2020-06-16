@@ -10,7 +10,8 @@
 
 # production
 /build
-
+/prod-bigscreen
+/test-bigscreen
 # misc
 .DS_Store
 .env.local
