@@ -93,6 +93,7 @@
   line-height: 32px;
 }
 .right-wrap .table .table-item .title-item {
+  width: 100%;
   display: flex;
 }
 .right-wrap .table .table-item .title-item .item-order {
@@ -110,6 +111,7 @@
   color: #0181FB;
 }
 .right-wrap .table .table-item .table-row {
+  width: 100%;
   display: flex;
 }
 .right-wrap .table .table-item .table-row .item-order {
