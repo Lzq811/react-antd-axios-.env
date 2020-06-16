@@ -21,6 +21,7 @@
 }
 .member-wrap .left-container {
   position: absolute;
+  z-index: 100;
   top: 140px;
   left: 70px;
   width: 580px;
@@ -28,6 +29,7 @@
 }
 .member-wrap .bottm-container {
   position: absolute;
+  z-index: 100;
   top: 1226px;
   left: 682px;
   height: 334px;
@@ -35,6 +37,7 @@
 }
 .member-wrap .right-container {
   position: absolute;
+  z-index: 100;
   top: 140px;
   left: 4998px;
   height: 1419px;

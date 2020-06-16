@@ -22,6 +22,7 @@
 .passenger-wrap .header-container {
   width: 5764px;
   position: absolute;
+  z-index: 100;
   top: 80px;
   left: 0px;
 }
@@ -30,6 +31,7 @@
 .passenger-wrap .right-container {
   position: absolute;
   border-radius: 10px;
+  z-index: 100;
 }
 .passenger-wrap .left-container {
   background-color: rgba(0, 0, 0, 0.2);
