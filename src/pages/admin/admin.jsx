@@ -12,17 +12,33 @@ export default class Admin extends Component {
       {
         itemName: '北京路步行街发展指数大屏', 
         pictureUrl: 'http://big-screen.oss-cn-shenzhen.aliyuncs.com/beijingRoad/develop.png',
-        targetLink: '/beijingroad/develop'
+        targetLink: '/develop'
+      },
+      {
+        itemName: '北京路步行街成长指数大屏', 
+        pictureUrl: 'http://big-screen.oss-cn-shenzhen.aliyuncs.com/beijingRoad/passenger.png',
+        targetLink: '/growth'
+      },
+      {
+        itemName: '北京路步行街创新指数大屏', 
+        pictureUrl: 'http://big-screen.oss-cn-shenzhen.aliyuncs.com/beijingRoad/passenger.png',
+        targetLink: '/innovate'
+      },
+      {
+        itemName: '北京路步行街经营指数大屏', 
+        pictureUrl: 'http://big-screen.oss-cn-shenzhen.aliyuncs.com/beijingRoad/passenger.png',
+        targetLink: '/operate'
       },
       {
         itemName: '北京路步行街客流指数大屏', 
         pictureUrl: 'http://big-screen.oss-cn-shenzhen.aliyuncs.com/beijingRoad/passenger.png',
-        targetLink: '/beijingroad/passenger'
+        targetLink: '/passenger'
       },
-      {itemName: '暂未开放', pictureUrl: '', targetLink: ''},
-      {itemName: '暂未开放', pictureUrl: '', targetLink: ''},
-      {itemName: '暂未开放', pictureUrl: '', targetLink: ''},
-      {itemName: '暂未开放', pictureUrl: '', targetLink: ''}
+      {
+        itemName: '北京路步行街辐射指数大屏', 
+        pictureUrl: 'http://big-screen.oss-cn-shenzhen.aliyuncs.com/beijingRoad/passenger.png',
+        targetLink: '/radiation'
+      },
     ],
     // initScreenNum: Array.from(Array(6), (v,k) =>k), // 創建一個長度為6的數組
     currentIndex: -1,
@@ -31,10 +47,9 @@ export default class Admin extends Component {
 
   handleClick = (index) => {
     const {screenData} = this.state
-    console.log('点击了按钮', index)
     if (screenData[index].targetLink && screenData[index].targetLink.length > 0) {
       /* 页面跳转, push(), goback(), replace(), go()*/
-      this.props.history.push('/login')
+      this.props.history.push(screenData[index].targetLink)
     } else {
       message.warn('当前屏幕暂未开放...')
     }
