@@ -193,13 +193,13 @@ export default class Member extends Component {
 
   makerList = () => {
     const {map} = this.state
-    const style = {
-      'background-image': 'linear-gradient(to right, rgba(0,216,236,0.4), #00D7EB)',
-      'color': 'white',
-      'font-size': '20px',
-      'border': 'none',
-      'padding': '8px 16px'
-    }
+    // const style = {
+    //   'background-image': 'linear-gradient(to right, rgba(0,216,236,0.4), #00D7EB)',
+    //   'color': 'white',
+    //   'font-size': '20px',
+    //   'border': 'none',
+    //   'padding': '8px 16px'
+    // }
     const posList = [
       {text: '外婆家', pos:  [117.287706,31.864806]},
       {text: '周六福', pos:  [117.287024,31.861667]},
@@ -211,11 +211,11 @@ export default class Member extends Component {
     let textMarkers = []
     posList.forEach(item => {
       textMarkers.push(
-        new window.AMap.Text({
-          text: item.text,
+        new window.AMap.Marker({
+          content: `<div class='text-marker'>${item.text}</div>`,
           position: item.pos,
           offset: new window.AMap.Pixel(0, 0),
-          style: style
+          // style: style
         })
       )
     })
