@@ -181,25 +181,28 @@ export default class Member extends Component {
     const marker = new window.AMap.Marker({
       icon: "http://big-screen.oss-cn-shenzhen.aliyuncs.com/HuaiHeRoad/current-arrow.png",
       position: map.getCenter(),
+      zIndex: 1000,
+      visible: true,
       offset: new window.AMap.Pixel(120, -300)
     })
     map.add(marker)
-    marker.setAnimation('AMAP_ANIMATION_BOUNCE')
+    // marker.setAnimation('AMAP_ANIMATION_BOUNCE')
     this.setState({map: map})
     setTimeout(() => {
       this.makerList()
-    }, 4000);
+    }, 4000)
   }
 
   makerList = () => {
     const {map} = this.state
-    // const style = {
-    //   'background-image': 'linear-gradient(to right, rgba(0,216,236,0.4), #00D7EB)',
-    //   'color': 'white',
-    //   'font-size': '20px',
-    //   'border': 'none',
-    //   'padding': '8px 16px'
-    // }
+    const style = {
+      'background-image': 'linear-gradient(to right, rgba(0,216,236,0.4), #00D7EB)',
+      'color': 'white',
+      'font-size': '20px',
+      'border': 'none',
+      'z-index': '100',
+      'padding': '8px 16px'
+    }
     const posList = [
       {text: '外婆家', pos:  [117.287706,31.864806]},
       {text: '周六福', pos:  [117.287024,31.861667]},
@@ -211,15 +214,18 @@ export default class Member extends Component {
     let textMarkers = []
     posList.forEach(item => {
       textMarkers.push(
-        new window.AMap.Marker({
-          content: `<div class='text-marker'>${item.text}</div>`,
+        new window.AMap.Text({
+          text: item.text,
+          zIndex: 1000,
+          visible: true,
           position: item.pos,
           offset: new window.AMap.Pixel(0, 0),
-          // style: style
+          style: style
         })
       )
     })
     map.add(textMarkers)
+    console.log(map)
   }
 
   componentDidMount () {
