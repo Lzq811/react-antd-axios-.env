@@ -2,5 +2,49 @@
   width: 1920px;
   height: 1440px;
   background-color: #042863;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-image: url('http://big-screen.oss-cn-shenzhen.aliyuncs.com/beijingRoad/map-bac.png');
   color: #fff;
+  position: relative;
+  .header-container {
+    position: absolute;
+    height: 70px;
+    width: 1680px;
+    left: 120px;
+    top: 110px;
+  }
+  .top-container {
+    position: absolute;
+    top: 193px;
+    left: 140px;
+    width: 1640px;
+    height: 644px;
+    display: flex;
+    justify-content: space-between;
+    .left, .right {
+      flex: 0 0 28%;
+      .bac-box {
+        margin-top: 215px;
+      }
+    }
+    .center {
+      flex: 0 0 40%;
+    }
+  }
+  .bottom-container {
+    position: absolute;
+    top: 854px;
+    left: 140px;
+    width: 1640px;
+    height: 456px;
+    display: flex;
+    justify-content: space-between;
+    .left, .right {
+      flex: 0 0 28%;
+    }
+    .center {
+      flex: 0 0 40%;
+    }
+  }
 }

@@ -2,5 +2,52 @@
   width: 1920px;
   height: 1440px;
   background-color: #042863;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-image: url('http://big-screen.oss-cn-shenzhen.aliyuncs.com/beijingRoad/map-bac.png');
   color: #fff;
+  position: relative;
+}
+.operate-wrap .header-container {
+  position: absolute;
+  height: 70px;
+  width: 1680px;
+  left: 120px;
+  top: 110px;
+}
+.operate-wrap .top-container {
+  position: absolute;
+  top: 193px;
+  left: 140px;
+  width: 1640px;
+  height: 644px;
+  display: flex;
+  justify-content: space-between;
+}
+.operate-wrap .top-container .left,
+.operate-wrap .top-container .right {
+  flex: 0 0 28%;
+}
+.operate-wrap .top-container .left .bac-box,
+.operate-wrap .top-container .right .bac-box {
+  margin-top: 215px;
+}
+.operate-wrap .top-container .center {
+  flex: 0 0 40%;
+}
+.operate-wrap .bottom-container {
+  position: absolute;
+  top: 854px;
+  left: 140px;
+  width: 1640px;
+  height: 456px;
+  display: flex;
+  justify-content: space-between;
+}
+.operate-wrap .bottom-container .left,
+.operate-wrap .bottom-container .right {
+  flex: 0 0 28%;
+}
+.operate-wrap .bottom-container .center {
+  flex: 0 0 40%;
 }
