@@ -194,3 +194,30 @@ input[type=button] {width: auto; overflow: visible;}
 	background-color: #02439F !important;
 	overflow: hidden;
 }
+
+/* 弹出框的样式 */
+.dialog-btn {
+	position: fixed;
+	top:126px;
+	left: 420px;
+	width: 76px;
+	height: 30px;
+	font-size: 13px;
+	line-height: 30px;
+	text-align: center;
+	border-radius: 6px;
+	cursor: pointer;
+	background-color: #02699A;
+}
+.ant-modal-header {
+  background: #000 !important;
+  border-bottom: none !important;
+}
+.ant-modal-title {
+  color: #02CDFF !important;
+  text-align: center !important;
+  font-size: 20px !important;
+}
+.modal-content {
+  height: 300px !important;
+}

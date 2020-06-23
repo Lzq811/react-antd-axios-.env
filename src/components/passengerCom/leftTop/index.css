@@ -1,0 +1,16 @@
+.rigth-top-wrap {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.rigth-top-wrap .top-chart-box,
+.rigth-top-wrap .bottom-chart-box {
+  width: 100%;
+  height: 310px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+.rigth-top-wrap .bottom-chart-box {
+  top: 334px;
+}

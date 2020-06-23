@@ -1,5 +1,3 @@
-/* 租金总租金，月租金单价走势 */
-
 import React, {Component} from 'react'
 
 import Border from '../../border'

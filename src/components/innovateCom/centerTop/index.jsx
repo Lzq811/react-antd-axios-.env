@@ -1,5 +1,3 @@
-/* 租金总租金，月租金单价走势 */
-
 import React, {Component} from 'react'
 
 import * as echarts from 'echarts'
@@ -99,7 +97,7 @@ export default class Rent extends Component {
               0, 0, 0, 1,
               [
                 {offset: 0, color: 'rgba(233,153,16,1)'},
-                {offset: 0.5, color: 'rgba(233,153,16,0.6)'},
+                {offset: 0.3, color: 'rgba(233,153,16,0.6)'},
                 {offset: 1, color: 'rgba(233,153,16,0)'}
               ]
             )

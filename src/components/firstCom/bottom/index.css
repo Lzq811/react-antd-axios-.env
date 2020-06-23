@@ -1,0 +1,16 @@
+.first-bottom-wrap {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.first-bottom-wrap .list-item {
+  flex: 0 0 18%;
+  width: 300px;
+  position: relative;
+}
+.first-bottom-wrap .list-item .chart-ele {
+  position: absolute;
+  top: 0;
+  left: 0;
+}

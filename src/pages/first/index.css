@@ -1,0 +1,44 @@
+.first-wrap {
+  width: 1920px;
+  height: 1440px;
+  background-color: #042863;
+  color: #fff;
+  position: relative;
+}
+.first-wrap .map-container {
+  z-index: -1;
+}
+.first-wrap .mask-layer {
+  width: 1710px;
+  height: 1206px;
+  position: absolute;
+  z-index: 100;
+  top: 122px;
+  left: 105px;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-image: url('http://big-screen.oss-cn-shenzhen.aliyuncs.com/beijingRoad/border-big-bac.png');
+}
+.first-wrap .mask-layer .header-container {
+  margin-top: -12px;
+}
+.first-wrap .mask-layer .header-container .logo {
+  position: absolute;
+  top: 4px;
+  left: 36px;
+  width: 230px;
+}
+.first-wrap .mask-layer .top-container {
+  position: absolute;
+  top: 40px;
+  left: 445px;
+  width: 820px;
+  height: 310px;
+}
+.first-wrap .mask-layer .bottom-container {
+  position: absolute;
+  top: 890px;
+  left: 2%;
+  width: 96%;
+  height: 300px;
+}

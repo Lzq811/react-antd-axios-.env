@@ -8,7 +8,7 @@ import flex from './utils/flex'
 
 import Login from './pages/login/login'
 import Admin from './pages/admin/admin'
-import Develop from './pages/develop' // 发展
+import First from './pages/first' // 首屏
 import Growth from './pages/growth' // 成长
 import Innovate from './pages/innovate' // 创新
 import Operate from './pages/operate' // 经营
@@ -28,13 +28,13 @@ class App extends Component {
         <Switch>
           <Route path='/login' component={Login}/>
           <Route path='/admin' component={Admin}/>
-          <Route path='/develop' component={Develop}/>
+          <Route path='/first' component={First}/>
           <Route path='/growth' component={Growth}/>
           <Route path='/innovate' component={Innovate}/>
           <Route path='/operate' component={Operate}/>
           <Route path='/passenger' component={Passenger}/>
           <Route path='/radiation' component={Radiation}/>
-          <Route path='/' component={Growth}/>
+          <Route path='/' component={First}/>
         </Switch>
       </BrowserRouter>
     )

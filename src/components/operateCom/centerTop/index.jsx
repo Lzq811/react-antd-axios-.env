@@ -1,5 +1,3 @@
-/* 租金总租金，月租金单价走势 */
-
 import React, {Component} from 'react'
 
 import * as echarts from 'echarts'
@@ -14,134 +12,82 @@ export default class Rent extends Component {
 
   lineChartOption = () => {
     return {
-      title: {show: false},
-      grid: {
-        top: 120,
-        bottom: 40,
-        right: 20,
-        left: 30,
-        containLabel: true
-      },
-      tooltip: {
-        trigger: 'axis',
-        triggerOn: 'none',
-        textStyle: {
-          fontSize: 14
-        },
-        axisPointer: {
-          type: 'none'
-        },
-        formatter: (arr) => {
-          console.log(arr)
-          if (arr && arr.length > 0) {
-            return `
-              <div style='width: 160px;height: 80px; font-size: 16px;'>
-                ${arr[arr.length - 1].axisValue}创新指数 <br />
-                <div style='font-size: 40px; color: #FDA000; margin-top: 16px;'>${arr[arr.length - 1].data}%</div>
-              </div>
-            `
-          }
-        }
-      },
-      xAxis: {
-        type: 'category',
-        axisLine: {
-          show: false
-        },
-        axisLabel: {
-          textStyle: {
-            color: '#fff',
-            fontSize: 16
-          },
-          interval: 0
-        },
-        axisTick: {
-          show: false
-        },
-        axisLine: {
-          show: false
-        },
-        data: ['2020年1月', '2020年2月', '2020年3月', '2020年4月', '2020年5月', '2020年6月']
-      },
-      yAxis: {
-        type: 'value',
-        axisLine: {
-          show: false
-        },
+      // tooltip: {},
+      legend: {show: false},
+      radar: {
+        shape: 'polygon',
+        center: ['50%', '44%'],
+        radius: '48%',
+        splitNumber: 5,
         splitLine: {
-          show: false
+          lineStyle: {
+            color: [
+              'rgba(48, 171, 214, 0.1)', 'rgba(48, 171, 214, 0.2)',
+              'rgba(48, 171, 214, 0.4)', 'rgba(48, 171, 214, 0.6)',
+              'rgba(48, 171, 214, 0.8)', 'rgba(48, 171, 214, 1)'
+            ]
+          }
         },
         axisLine: {
-          show: false
+          lineStyle: {
+            color: 'rgba(48, 171, 214, 1)'
+          }
         },
-        axisTick: {
-          show: false
+        splitArea: {
+          show: true,
+          areaStyle: {
+            color: 'rgba(0, 0, 0, 0.1)',
+            shadowBlur: 18
+          }
         },
-        axisLabel: {
+        name: {
           textStyle: {
-            color: '#fff',
+            color: '#3ED4FF',
             fontSize: 18
           }
         },
+        indicator: [
+          { name: '平均客单价变动指数', max: 100},
+          { name: '经营者信心指数', max: 100},
+          { name: '从业人员变动指数', max: 100},
+          { name: '平均综合成本指数', max: 100}
+        ]
       },
-      series: [
-        {
-          type: 'line',
-          smooth: true,
-          itemStyle: {
-            color: 'rgba(233,153,16,1)',
-            borderColor: 'rgba(233,153,16,1)',
-            borderWidth: 4
-          },
-          areaStyle: {
-            show: true,
-            color: new echarts.graphic.LinearGradient(
-              0, 0, 0, 1,
-              [
-                {offset: 0, color: 'rgba(233,153,16,1)'},
-                {offset: 0.5, color: 'rgba(233,153,16,0.6)'},
-                {offset: 1, color: 'rgba(233,153,16,0)'}
-              ]
-            )
-          },
-          symbolSize: 20,
-          symbol: 'emptyCircle',
-          lineStyle: {
-            width: 6,
-            color: '#FDA000'
-          },
-          emphasis: {
-            itemStyle: {
-              borderWidth: 10,
-              borderColor: '#FDA000',
-              shadowColor: '#FDA000',
-              shadowBlur: 30
-            }
-          },
-          data: [13, 17, 18, 19, 21, 25]
-        }
-      ]
+      series: [{
+        name: '2020年6月步行街经营指数：80%',
+        type: 'radar',
+        areaStyle: {opacity: 0.5},
+        itemStyle: {
+          color: 'rgb(0,204,255)'
+        },
+        data: [
+          {
+            value: [82, 88, 75, 86]
+          }
+        ]
+      }]
     }
-  }
-
-  onChartReady = (opt) => {
-    opt.dispatchAction({
-      type: 'showTip',
-      seriesIndex: 0,
-      dataIndex: 5
-    })
   }
 
   render () {
     const lineList = Array.from(Array(40), (v,k) =>k)
     return (
       <div className='growth-num-wrap'>
-        <Border width={666} height={644} title={'近6个月步行街创新指数走势'} unit={''} lineList={lineList} size={18}></Border>
+        <Border width={666} height={644} title={'2020年6月步行街经营指数：80%'} unit={''} lineList={lineList} size={16}></Border>
         <ReactEcharts className='chart-ele'
           option={this.lineChartOption()}
-          onChartReady={this.onChartReady}
           style={{height: '100%', width: '100%'}}
         />
+        <div className='num-table-box'>
+          <div className='table-item'>平均客单价变动指数</div>
+          <div className='table-item'>经营者信心指数</div>
+          <div className='table-item'>从业人员变动指数</div>
+          <div className='table-item'>平均综合成本指数</div>
+          <div className='table-item table-item-value'>82%</div>
+          <div className='table-item table-item-value'>88%</div>
+          <div className='table-item table-item-value'>75%</div>
+          <div className='table-item table-item-value'>86%</div>
+        </div>
       </div>
     )
   }

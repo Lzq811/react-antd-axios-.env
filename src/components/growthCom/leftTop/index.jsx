@@ -1,5 +1,3 @@
-/* 租金总租金，月租金单价走势 */
-
 import React, {Component} from 'react'
 
 import * as echarts from 'echarts'
@@ -12,76 +10,173 @@ import './index.less'
 export default class Rent extends Component {
 
   barChartOption = () => {
-    return {
-      title: {show: false},
+    const VALUE = [17, 23, 29, 33, 37, 31]
+    const CubeLeft = echarts.graphic.extendShape({
+      shape: {x: 0, y: 0},
+      buildPath: function(ctx, shape) {
+        const xAxisPoint = shape.xAxisPoint
+        const c0 = [shape.x - 10, shape.y]
+        const c1 = [shape.x + 10, shape.y]
+        const c2 = [xAxisPoint[0] + 10, xAxisPoint[1]]
+        const c3 = [xAxisPoint[0] - 10, xAxisPoint[1]]
+        ctx.moveTo(c0[0], c0[1]).lineTo(c1[0], c1[1]).lineTo(c2[0], c2[1]).lineTo(c3[0], c3[1]).closePath()
+        ctx.stroke()
+      }
+    })
+
+    const CubeRight = echarts.graphic.extendShape({
+      shape: {x: 0, y: 0},
+      buildPath: function(ctx, shape) {
+        const xAxisPoint = shape.xAxisPoint
+        const c1 = [shape.x + 11, shape.y]
+        const c2 = [xAxisPoint[0] + 11, xAxisPoint[1]]
+        const c3 = [xAxisPoint[0] + 8 + 8, xAxisPoint[1] - 10]
+        const c4 = [shape.x + 8 + 8, shape.y - 10]
+        ctx.moveTo(c1[0], c1[1]).lineTo(c2[0], c2[1]).lineTo(c3[0], c3[1]).lineTo(c4[0], c4[1]).closePath();
+        ctx.stroke()
+      }
+    })
+
+    const CubeTop = echarts.graphic.extendShape({
+      shape: {x: 0, y: 0},
+      buildPath: function(ctx, shape) {
+        const c1 = [shape.x - 10, shape.y - 1]
+        const c2 = [shape.x + 10, shape.y - 1]
+        const c3 = [shape.x + 15, shape.y - 9]
+        const c4 = [shape.x - 5, shape.y - 9]
+        ctx.moveTo(c1[0], c1[1]).lineTo(c2[0], c2[1]).lineTo(c3[0], c3[1]).lineTo(c4[0], c4[1]).closePath()
+        ctx.stroke()
+      }
+    })
+
+    echarts.graphic.registerShape('CubeLeft', CubeLeft)
+    echarts.graphic.registerShape('CubeRight', CubeRight)
+    echarts.graphic.registerShape('CubeTop', CubeTop)
+    return  {
       grid: {
-        top: '30%',
-        bottom: '10%',
-        right: '8%',
-        left: '10%',
+        top: '26%',
+        left: '4%',
+        right: '6%',
+        bottom: '8%',
         containLabel: true
       },
       xAxis: {
         type: 'category',
+        data: ['1月', '2月', '3月', '4月', '5月', '6月'],
         axisLine: {
           show: false
         },
-        axisLabel: {
-          textStyle: {
-            color: '#fff',
-            fontSize: 18
-          }
-        },
+        offset: 0,
         axisTick: {
           show: false
         },
-        axisLine: {
-          show: false
-        },
-        data: ['1月', '2月', '3月', '4月', '5月', '6月']
+        axisLabel: {
+          color: '#fff',
+          fontSize: 16
+        }
       },
       yAxis: {
         type: 'value',
-        name: '单位:元/平米',
-        nameLocation: 'end',
-        nameTextStyle: {
-          color: '#fff',
-          fontSize: 16
-        },
         axisLine: {
           show: false
         },
         splitLine: {
           show: false
         },
-        axisLine: {
-          show: false
-        },
         axisTick: {
           show: false
         },
         axisLabel: {
-          textStyle: {
-            color: '#fff',
-            fontSize: 18
-          }
+          color: '#fff',
+          fontSize: 16
         },
       },
       series: [
         {
-          type: 'bar',
-          barWidth: '36%',
-          itemStyle: {
-            color: new echarts.graphic.LinearGradient(
-              0, 0, 0, 1,
-              [
-                {offset: 0, color: '#9A3BF3'},
-                {offset: 0.5, color: '#6765FF'},
-                {offset: 1, color: '#258AFF'}
-              ]
-            )
+          type: 'custom',
+          label: {
+            show: false
           },
-          data: [14, 22, 25, 31, 28, 21]
+          renderItem: (params, api) => {
+            const location = api.coord([api.value(0), api.value(1)])
+            return {
+              type: 'group',
+              children: [
+                {
+                  type: 'CubeLeft',
+                  shape: {
+                    api,
+                    xValue: api.value(0),
+                    yValue: api.value(1),
+                    x: location[0],
+                    y: location[1],
+                    xAxisPoint: api.coord([api.value(0), 0])
+                  },
+                  style: {
+                    fill: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                        offset: 0,
+                        color: 'rgba(164,66,255,1)'
+                      },
+                      {
+                        offset: 1,
+                        color: 'rgba(37,139,255,1)'
+                      }
+                    ])
+                  }
+                },
+                {
+                  type: 'CubeRight',
+                  shape: {
+                    api,
+                    xValue: api.value(0),
+                    yValue: api.value(1),
+                    x: location[0],
+                    y: location[1],
+                    xAxisPoint: api.coord([api.value(0), 0])
+                  },
+                  style: {
+                    fill: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                        offset: 0,
+                        color: 'rgba(164,66,255,1)'
+                      },
+                      {
+                        offset: 1,
+                        color: 'rgba(37,139,255,1)'
+                      }
+                    ])
+                  }
+                },
+                {
+                  type: 'CubeTop',
+                  shape: {
+                    api,
+                    xValue: api.value(0),
+                    yValue: api.value(1),
+                    x: location[0],
+                    y: location[1],
+                    xAxisPoint: api.coord([api.value(0), 0])
+                  },
+                  style: {
+                    fill: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                      {offset: 0, color: 'rgba(164,66,255,1)'},
+                      {offset: 1, color: 'rgba(164,66,255,1)'}
+                    ])
+                  }
+                }
+              ]
+            }
+          },
+          data: VALUE
+        },
+        {
+          type: 'bar',
+          label: {
+            show: false
+          },
+          itemStyle: {
+            color: 'transparent'
+          },
+          data: VALUE
         }
       ]
     }

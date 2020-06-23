@@ -1,0 +1,49 @@
+.amap-passenger-wrap {
+  width: 665px;
+  height: 644px;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0px 5px 35px 0px rgba(0, 204, 255, 0.91);
+  .map {
+    /* 665 644 4倍 */
+    width: 2660px;
+    height: 2576px;
+    transform-origin: left top 0px;
+    transform: scale(0.25, 0.25);
+  }
+  .passenger-num-box {
+    position: absolute;
+    top: 10px;
+    left: 4%;
+    width: 92%;
+    height: 96px;
+    display: flex;
+    justify-content: space-between;
+    .list-item {
+      flex: 0 0 48%;
+      background-color: rgba(0, 0, 0, 0.2);
+      border-radius: 6px;
+      display: flex;
+      .icon-box {
+        flex: 0 0 36%;
+        padding-top: 16px;
+        text-align: center;
+      }
+      .right-content {
+        flex: 0 0 64%;
+        >h3 {
+          color: #fff;
+          font-size: 28px;
+          letter-spacing: 2px;
+          margin: 4px 0 0 0;
+        }
+        >h4 {
+          color: #fff;
+          font-size: 18px;
+          margin: 0;
+        }
+      }
+    }
+  }
+}

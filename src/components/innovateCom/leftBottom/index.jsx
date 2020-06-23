@@ -1,5 +1,3 @@
-/* 租金总租金，月租金单价走势 */
-
 import React, {Component} from 'react'
 
 import * as echarts from 'echarts'
@@ -70,9 +68,9 @@ export default class Rent extends Component {
       series: [
         {
           type: 'bar',
-          barWidth: '36%',
-          // roundCap: true, // 仅在极坐标生效
+          barWidth: 24,
           itemStyle: {
+            barBorderRadius: 12,
             color: '#FF54BD'
           },
           data: [6, 8, 9, 7, 11, 13]
